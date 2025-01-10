@@ -1,0 +1,23 @@
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.28;
+
+contract Counter {
+    uint public count;
+
+    event CountIncremented(uint newCount);
+
+    constructor() {
+        count = 0; // Initialise le compteur à 0
+    }
+
+    function increment() public {
+        require(count < 100, "Count has reached the maximum of 100"); // Vérifie que le compteur est inférieur à 100
+        count += 1; // Incrémente le compteur
+        emit CountIncremented(count); // Émet un événement pour signaler l'incrémentation
+    }
+
+    function getCount() public view returns (uint) {
+        return count; // Renvoie la valeur actuelle du compteur
+    }
+}
