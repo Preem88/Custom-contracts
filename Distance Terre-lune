@@ -1,0 +1,17 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract EarthMoonDistance {
+    // La distance moyenne entre la Terre et la Lune en kilomètres
+    uint256 private constant distanceKm = 384400;
+
+    // Fonction pour obtenir la distance en kilomètres
+    function getDistanceInKilometers() public pure returns (uint256) {
+        return distanceKm;
+    }
+
+    // Fonction pour obtenir la distance en mètres
+    function getDistanceInMeters() public pure returns (uint256) {
+        return distanceKm * 1000;
+    }
+}
